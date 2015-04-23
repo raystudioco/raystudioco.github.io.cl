@@ -1,19 +1,26 @@
 ---
 layout: custompage
 description: "Raystudio Photography Theme"
-custom_js: mainpage
-custom_css: modern-business
+custom_js: 
+- resources/jquery-ui-1.10.2.min
+- jquery.nerveSlider.min
+- tools.flickr.min
+- mainpage
+custom_css: 
+- modern-business
+- nerveSlider.min
+- extracustom
 ---    
-    <!-- Header Carousel -->
+    <!-- Header Carousel ->
     <header id="myCarousel" class="intro-header carousel slide">
-        <!-- Indicators -->
+        <!-- Indicators ->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
-        <!-- Wrapper for slides -->
+        <!-- Wrapper for slides ->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
@@ -35,7 +42,7 @@ custom_css: modern-business
             </div>
         </div>
 
-        <!-- Controls -->
+        <!-- Controls ->
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
             <span class="icon-prev"></span>
         </a>
@@ -43,6 +50,16 @@ custom_css: modern-business
             <span class="icon-next"></span>
         </a>
     </header>
+    swap for nerveslider-->
+    <header id="slideSection" class="headerSection" >
+		<div id="sliderCover"></div>
+        <div class="nerveSlider1">
+            <div class="slider1">
+				<img src="https://farm7.staticflickr.com/6007/5924952627_99b3fe96db_o.jpg" alt="IMG_5527_selectCrop" data-slidecaption="<h1>Raystudio Photography</h1> A site about Photography Travel and Coffee">		
+            </div>
+        </div>
+    </header>
+
 
     <!-- Page Content -->
     <div class="container">
@@ -54,18 +71,20 @@ custom_css: modern-business
                     Welcome to Modern Business
                 </h1>
             </div>
+			{% for post in paginator.posts limit:3 %}
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
+                        <a href="{{ post.url | prepend: site.baseurl }}"><h4><i class="fa fa-fw fa-check"></i> {{ post.title | truncatewords:8 }} </h4></a>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
+                        <p>{{ post.content | strip_html | truncatewords:35}}</p>
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-default">Read More...</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+			{% endfor %}
+            <!--<div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
@@ -86,44 +105,46 @@ custom_css: modern-business
                         <a href="#" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!-- /.row -->
 
         <!-- Portfolio Section -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Portfolio Heading</h2>
+                <h2 class="page-header">Recent works</h2>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
+            <div class="portfolioPhoto">
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem0">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem1">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem2">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem3">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem4">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem5">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
             </div>
         </div>
         <!-- /.row -->
