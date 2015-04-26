@@ -2993,6 +2993,11 @@ form .row:first-child .floating-label-form-group {
   text-shadow: none;
   background: #0085a1;
 }
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: #0085a1;
+}
 body {
   webkit-tap-highlight-color: #0085a1;
 }
