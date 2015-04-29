@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <!-- Post Header -->
@@ -47,4 +48,9 @@ layout: default
     </div>
 </article>
 
+<!--disqus-->
+{% if page.comments %}
+	<div id="disqus_thread"></div>
+	{% include disquscomment.html %}
+{% endif %}
 <hr>

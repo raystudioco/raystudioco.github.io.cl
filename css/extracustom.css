@@ -14,6 +14,15 @@
 
 }
 
+.preloader {
+	background: url(icons/loader-1.gif) center center no-repeat;
+    background-size: 30px;
+}
+
+.preloader img{
+	opacity: 0;
+}
+
 .nerveSlider1 {
 	/*padding:80px 0;*/
 	text-align:center;
@@ -64,3 +73,27 @@
           transform: translate(-50%,-50%);  */
 
 }
+
+/*for accomdating top bar in small screen.*/
+body{
+	padding-top: 50px;
+}
+
+.ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_pauseButton  {
+	display:none;
+}
+
+@media only screen and (min-width: 768px) {
+	body{
+		padding-top: 0px;
+	}
+
+	.ns_nerveSlider .ns_nextButton, .ns_nerveSlider .ns_prevButton, .ns_nerveSlider .ns_pauseButton {
+		display:block;
+	}	
+}
+
+
+
+
+
