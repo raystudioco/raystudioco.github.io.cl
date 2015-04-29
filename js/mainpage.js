@@ -78,7 +78,8 @@ var initSliderTab = function(flickrId, flickrSliderImgTag){
 
 var initRecentWorks = function(flickrId){
 
-	//$('.loading').waitLoadingEvent("recentphoto",true);								
+		
+	$('.portfoliorow').addClass('preloader');//.find("img").css({opacity:0});							
 	var flickr2 = new Tools.Flickr();
 	flickr2.setSearchUserId(flickrId).applySearch(
 		function(data) {
@@ -87,15 +88,25 @@ var initRecentWorks = function(flickrId){
 				$('#portfoliorowItem'+k).html('');
 				$('#portfoliorowItem'+k).append(
 					$('<div/>').append(
-						$('<a/>', {href: data[k].image, rel:'prettyphotolightbox'+'[0]', title:data[k].title}).append(
-							$('<img/>', {src: data[k].image, alt:data[k].title }).addClass('img-responsive img-portfolio img-hover')
+						$('<a/>', {href: data[k].image, title:data[k].title}).append(
+							$('<img/>', {src: data[k].image, alt:data[k].title }).addClass('img-responsive img-portfolio img-hover')//.css({opacity:0})
 						).addClass('image full')
 					).addClass('img-container')
 				);
 			}
 
-			//$("a[rel^='prettyphotolightbox']", '#portfoliorow').prettyPhoto({deeplinking:false}); 
 
+			$('.img-portfolio').one("load", function() {
+				$(this).parent().parent().parent().removeClass('preloader');
+				//$(this).css({opacity:1.0})
+			}).each(function() {
+				if(this.complete){$(this).load();};
+			});
+			
+			baguetteBox.run('.portfolioPhoto', {
+				// Custom options
+			});
+			
 			//$('.loading').trigger("recentphoto");
 
 		}
@@ -106,8 +117,7 @@ var initRecentWorks = function(flickrId){
 
 
 
-$(document).ready(function() {
-
+window.onload = function() {
 	initSliderTab(_flickrId,_flickrSliderImgTag);
 
 	//swap portfolio
@@ -115,5 +125,5 @@ $(document).ready(function() {
 	initRecentWorks(_flickrId);
 	
 
-});
+};
 
