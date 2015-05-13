@@ -1,0 +1,122 @@
+---
+layout: custompage
+title: "Portfolio"
+description: "Raystudio Photography"
+custom_js: 
+- tools.flickr.min
+- baguetteBox.min
+- photomosaic/jquery-1.9.1.min
+- photomosaic/jstween-1.1
+- photomosaic/jquery.photoMosaic
+- portfoliopage
+custom_css:
+- modern-business
+- baguetteBox.min
+- photoMosaic
+- extracustom
+---    
+    <!-- Header nerveslider-->
+    <!--header id="slideSection" class="headerSection" >
+		<div id="sliderCover" class="loadingcover"></div>
+        <div class="nerveSlider1">
+            <div class="slider1">
+				<img src="https://farm7.staticflickr.com/6007/5924952627_99b3fe96db_o.jpg" alt="IMG_5527_selectCrop" data-slidecaption="<h1>Raystudio Photography</h1> A site about Photography Travel and Coffee" style="width:100%;">		
+            </div>
+        </div>
+    </header-->
+
+	<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ page.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+	
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+	
+						<div class='setPortfolio-parent'>
+							<div class='setHeader'>
+								<div id="setPrimaryPhoto"></div>
+								<div id="setDescription"></div>
+								<div class="setClear"></div>
+
+							</div>
+							<div class="margin20"></div>
+							<div id="setPhoto"></div>
+							<div id="setFooter"></div>
+						</div>		
+        </div>
+        <!-- /.row -->
+        <hr>
+
+
+        <!-- Portfolio Section -->
+        <div id="collectionContainer" class="row">
+		
+		
+            <div class="col-lg-12">
+                <h2 class="page-header">Categories</h2>
+            </div>
+            <div id="portfoliorow" class="portfolioPhoto">
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem0">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem1">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem2">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem3">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem4">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 portfoliorow" id="portfoliorowItem5">
+                    <a href="portfolio-item.html">
+                        <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+
+
+                <div class="col-md-4">
+                    <a class="btn btn-lg btn-default btn-block" href="http://www.flickr.com/photos/raystudio">See more at flickr</a>
+                </div>
+            </div>
+        </div>		
+
+
+        <hr>
+
+
+
