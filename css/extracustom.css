@@ -14,7 +14,16 @@
 
 }
 
+
 .preloader {
+
+  max-width: 100%;
+  height: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 	background: url(icons/loader-1.gif) center center no-repeat;
     background-size: 30px;
 }
@@ -74,6 +83,30 @@
 
 }
 
+.img-portfolio-div {
+  /*use div and put image in bg url*/
+  /*max-height: 100%;*/
+  /*min-height:100%;*/
+  /*position: relative;*/
+  max-width: 100%;
+  height: auto;
+  
+  /*position: absolute;*/
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;  
+/*  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);  */
+
+}
+
 /*for accomdating top bar in small screen.*/
 body{
 	padding-top: 50px;
@@ -93,6 +126,16 @@ body{
 	}	
 }
 
+.portfolio-title {
+	text-align: center;
+	width: 100%;
+	color: white;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 
 
 
