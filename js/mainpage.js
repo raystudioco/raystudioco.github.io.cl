@@ -7,7 +7,8 @@ var initSlider = function(){
 		slideTransitionSpeed: 1000,
 		slideTransitionEasing: "easeOutExpo",
 		sliderWidth: "100%",
-		sliderHeightAdaptable: true,
+		sliderHeight: "100%",
+		/*sliderHeightAdaptable: true,*/
 		sliderResizable: true,
 		showDots: false
 	});
@@ -29,7 +30,8 @@ var slideLoaded = function(){
 			//$('#sliderCover').removeClass("loadingcover");
 			//$('.slider1').show(200, function(){ $('#slideSection').height('auto'); });
 			$(this).removeClass("loadingcover");
-			$('#slideSection').height('auto');
+			
+			//$('#slideSection').height('auto');
 		}
 	);					
 }
@@ -42,8 +44,8 @@ var _flickrSliderImgTag = 'websiteslider';
 var initSliderTab = function(flickrId, flickrSliderImgTag){
 	//$('.slider1').hide();
 	$('.slider1').html('');
-	var ssW = $('#slideSection').width();
-	$('#slideSection').height(ssW/965*220+7);
+	//var ssW = $('#slideSection').width();
+	//$('#slideSection').height(ssW/965*220+7);
 	
 	$('#sliderCover').addClass("loadingcover");
 	

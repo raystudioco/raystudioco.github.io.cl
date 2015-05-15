@@ -177,7 +177,9 @@ g}}(JQPM));
 
         loading_template: ' ' +
                 '<div id="photoMosaic_{{id}}" class="photoMosaic">' +
-                    '<div class="photoMosaicLoading">loading gallery...</div>' +
+                    '<div class="photoMosaicLoading">'+
+					//loading gallery...
+					'</div>' +
                 '</div>',
 
         init: function () {	

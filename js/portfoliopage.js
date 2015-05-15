@@ -57,32 +57,36 @@
 		
 		$('#setFooter').append(
 			$('<div/>').append(
-			$('<span/>').addClass("btn btn-lg btn-default btn-block").html('Close').click(
-				function(){
-					//hide the div and clean the divs
-					
-					$('.setPortfolio-parent').hide();
-					
-					$('#setPrimaryPhoto').html('');
-					$('#setDescription').html('');
-					$("#setPhoto").html('');
-					console.log(JQPM("#setPhoto").get(0));
-					console.log(JQPM.data(JQPM("#setPhoto").get(0), "photoMosaic"));
-					JQPM.removeData(JQPM("#setPhoto").get(0), "photoMosaic");
-					
-					$('#setFooter').html('');
-					
-					//opacity
-					if($("#collectionContainer").css('opacity')==0){
-						$("#collectionContainer").css({opacity:100,visibility:'visible'});
-					}
-					$("#collectionContainer").show("slow", function(){
-						//do something;
-					});
-					location.hash='';
-				}
-			)
-			).addClass("col-md-4")
+				$('<div/>').append(
+					$('<div/>').append(
+						$('<span/>').addClass("btn btn-lg btn-default btn-block").html('Close').click(
+							function(){
+								//hide the div and clean the divs
+								
+								$('.setPortfolio-parent').hide();
+								
+								$('#setPrimaryPhoto').html('');
+								$('#setDescription').html('');
+								$("#setPhoto").html('');
+								console.log(JQPM("#setPhoto").get(0));
+								console.log(JQPM.data(JQPM("#setPhoto").get(0), "photoMosaic"));
+								JQPM.removeData(JQPM("#setPhoto").get(0), "photoMosaic");
+								
+								$('#setFooter').html('');
+								
+								//opacity
+								if($("#collectionContainer").css('opacity')==0){
+									$("#collectionContainer").css({opacity:100,visibility:'visible'});
+								}
+								$("#collectionContainer").show("slow", function(){
+									//do something;
+								});
+								location.hash='';
+							}
+						)
+					).addClass("col-md-4 col-md-offset-4")
+				).addClass("row")
+			).addClass("well")
 		);
 		
 	}
