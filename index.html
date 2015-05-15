@@ -1,6 +1,7 @@
 ---
 layout: custompage
-description: "Raystudio Photography Theme"
+title: "RayStudio"
+description: "A site for photography and few random things"
 custom_js: 
 - resources/jquery-ui-1.10.2.min
 - jquery.nerveSlider.min
@@ -16,6 +17,19 @@ custom_css:
     <!-- Header nerveslider-->
     <header id="slideSection" class="headerSection" >
 		<div id="sliderCover" class="loadingcover"></div>
+		<div class="titleoverslide intro-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+						<div class="site-heading long-site-name">
+							<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+							<hr class="small">
+							<span class="subheading">{{ page.description }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="nerveSlider1">
             <div class="slider1">
 				<img src="https://farm7.staticflickr.com/6007/5924952627_99b3fe96db_o.jpg" alt="IMG_5527_selectCrop" data-slidecaption="<h1>Raystudio Photography</h1> A site about Photography Travel and Coffee" style="width:100%;">		
@@ -30,9 +44,9 @@ custom_css:
         <!-- Marketing Icons Section -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    {{ site.title }}
-                </h1>
+                <h2 class="page-header">
+                    Recent posts
+                </h2>
             </div>
 			{% for post in site.posts limit:3 %}
             <div class="col-md-4">
